@@ -1,0 +1,53 @@
+@import vars
+.header
+    padding-top: 50px
+    padding-bottom: 64px
+
+    color: $colorWhite
+    &-wrapper
+        display: flex
+        align-items: center
+        justify-content: space-between
+
+.logo
+    &_icon
+        display: inline-block
+        width: 32px
+        height: 32px
+
+        margin-right: 12px
+        text-align: center
+        line-height: 32px
+
+        font-weight: 900
+        border: 1px solid $colorWhite
+
+.nav
+    &_link
+        text-decoration: none
+        color: $colorWhite
+        transition: 0.3s linear
+        &:hover
+            color: $colorDarkBlue
+        &:not(:last-child)
+            margin-right: 80px
+
+
+
+@media (max-width: 768px)
+    .nav
+        display: none
+    .menu
+        display: block
+
+@media (max-width: 414px)
+    .header
+        &-wrapper
+            flex-direction: column
+    .menu
+        margin-bottom: 26px
+        order: 0
+
+    .logo
+        order: 1
+

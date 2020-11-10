@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <title>Logistics project</title>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-wrapper">
+                <div class="logo">
+                    <div class="logo_icon">G</div>Грузоперевозки.рф
+                </div>
+                <nav class="nav">
+                    <a href="#about" class="nav_link">О компании</a>
+                    <a href="#services" class="nav_link">Услуги</a>
+                    <a href="#" class="nav_link">Прайс-лист</a>
+                    <a href="#contacts" class="nav_link nav_link--contacts">Контакты</a>
+                </nav>
+                <button class="menu" id="nav-icon2">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="load">
+        <img src="img/spinner.gif" alt="spinner">
+    </div>
+
+    <div class="navbar">
+        <div class="container">
+            <a href="https://newmywebsite.ru/#portfolio">Вернуться в портфолио</a>
+        </div>
+    </div>
+
+    <div class="modal-wrap animate__animated animate__zoomIn">
+        <div class="container">
+            <div class="modal">
+                <button class="modal_close">
+                    <svg width="21" height="21" viewBox="0 0 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L19.5 19.5M19.5 1L1 19.5" stroke="#181A44" stroke-width="2" />
+                    </svg>
+                </button>
+                <div class="modal-card animate__animated"></div>
+                <div class="modal-calc animate__animated">
+                    <h3 class="modal-calc_title">Расчитать стоимость заказа</h3>
+
+                    <div class="modal-calc-wrap">
+                        <div class="modal-calc-left">
+                            <span class="modal-calc-left_text">Подать машину через:</span>
+                            <div class="modal-calc-left-radio">
+                                <div class="radio-container">
+                                    <input type="radio" id="one-hour" name="checkbox" checked>
+                                    <label for="one-hour">1 час</label>
+                                    <span class="radio-container_checkmark"></span>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" id="two-hours" name="checkbox">
+                                    <label for="two-hours">2 часа</label>
+                                    <span class="radio-container_checkmark"></span>
+                                </div>
+                                <div class="radio-container">
+                                    <input type="radio" id="three-hours" name="checkbox">
+                                    <label for="three-hours">3 часа</label>
+                                    <span class="radio-container_checkmark"></span>
+                                </div>
+                            </div>
+
+                            <div class="modal-calc-left-inputs-wrap">
+                                <div class="modal-calc-left-input modal-calc-left-input--date">
+                                    <input type="text" id="date" required>
+                                    <label for="date">Дата</label>
+                                </div>
+
+                                <div class="modal-calc-left-input modal-calc-left-input--time">
+                                    <input type="text" id="time" required>
+                                    <label for="time">Время</label>
+                                </div>
+                            </div>
+
+                            <div class="modal-calc-left-input modal-calc-left-input--from">
+                                <input type="text" id="from" required>
+                                <label for="from">Откуда</label>
+                            </div>
+
+                            <div class="modal-calc-left-input modal-calc-left-input--to">
+                                <input type="text" id="to" required>
+                                <label for="to">Куда</label>
+                            </div>
+
+                        </div>
+                        <div class="modal-calc-right">
+                            <div class="modal-calc-left-inputs-wrap">
+                                <div
+                                    class="modal-calc-left-input modal-calc-left-input--date modal-calc-right-dropdown-input">
+                                    <input type="text" id="transportation" required>
+                                    <label for="transportation">Тип перевозки</label>
+                                    <svg width="17" height="10" viewBox="0 0 17 10" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.5 1L8.5 8L15.5 1" stroke="#181A44" stroke-width="2" />
+                                    </svg>
+                                </div>
+
+                                <div
+                                    class="modal-calc-left-input modal-calc-left-input--time modal-calc-right-dropdown-input">
+                                    <input type="text" id="movers" required>
+                                    <label for="movers">Кол-во грузчиков</label>
+                                    <svg width="17" height="10" viewBox="0 0 17 10" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.5 1L8.5 8L15.5 1" stroke="#181A44" stroke-width="2" />
+                                    </svg>
+                                </div>
+                            </div>
+                            <div class="modal-calc-left-inputs-wrap">
+                                <div
+                                    class="modal-calc-left-input modal-calc-left-input--date modal-calc-right-dropdown-input">
+                                    <input type="text" id="lease" required>
+                                    <label for="lease">Срок аренды</label>
+                                    <svg width="17" height="10" viewBox="0 0 17 10" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M1.5 1L8.5 8L15.5 1" stroke="#181A44" stroke-width="2" />
+                                    </svg>
+                                </div>
+
+                                <div class="modal-calc-left-input modal-calc-left-input--time">
+                                    <input type="text" id="phone" required>
+                                    <label for="phone">Телефон</label>
+                                </div>
+                            </div>
+                            <footer class="modal-calc-right-footer">
+                                <span class="total">Итого: 3590 руб.</span>
+                                <button class="button modal-calc_btn">Оформить заказ</button>
+                            </footer>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal-wrap-menu">
+        <div class="modal-menu">
+            <nav class="nav modal-nav">
+                <a href="#about" class="nav_link modal-nav_link">О компании</a>
+                <a href="#services" class="nav_link modal-nav_link">Услуги</a>
+                <a href="#" class="nav_link modal-nav_link">Прайс-лист</a>
+                <a href="#contacts" class="nav_link modal-nav_link">Контакты</a>
+            </nav>
+        </div>
+    </div>
+    <div class="hero">
+        <div class="hero-image animate__animated animate__fadeIn"></div>
+
+        <div class="container">
+            <div class="hero-slider">
+            </div>
+        </div>
+    </div>
+    <section class="info" data-type="background" data-speed="10">
+        <div class="container">
+            <div class="about" id="about">
+                <figure class="about_figure">
+                    <img src="img/port-min.jpg" alt="port" class="about_img hidden animate__animated">
+                    <svg class="about_figure-lines--top" width="222" height="329" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <path id="about-figure-line-top" d="M1 1 H 220 V 327 H 40" />
+                            <mask id="about-figure-line-top-mask">
+                                <use class="mask" href="#about-figure-line-top" />
+                            </mask>
+                        </defs>
+                        <g class="paths">
+                            <use href="#about-figure-line-top" mask="url(#about-figure-line-top-mask)" />
+                        </g>
+                    </svg>
+                    <svg class="about_figure-lines--bottom" width="318" height="348" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <path id="about-figure-line-bottom" d="M1 1 V 346 H 316" />
+                            <mask id="about-figure-line-bottom-mask">
+                                <use class="mask" href="#about-figure-line-bottom" />
+                            </mask>
+                        </defs>
+                        <g class="paths">
+                            <use href="#about-figure-line-bottom" mask="url(#about-figure-line-bottom-mask)" />
+                        </g>
+                    </svg>
+                </figure>
+                <div class="about-text">
+                    <h2 class="about_title title animate__animated">О нас</h2>
+                    <p class="about_descr about_descr--first animate__animated">
+                        Сегодня с вопросом транспортировки грузов сталкивается практически каждый человек. Очень
+                        важно
+                        заручиться поддержкой профессионалов, чтобы имущество не пострадало от рук нерадивых
+                        грузчиков
+                        или
+                        чтобы
+                        товар не потерялся в пути по вине мошенников-водителей.
+                    </p>
+                    <p class="about_descr about_descr--second animate__animated">
+                        Чтобы Ваш груз прибыл в целости и сохранности к месту назначения, чтобы получить
+                        квалифицированную
+                        помощь при переезде Вашей фирмы, а так же, чтобы личные вещи не пострадали в процессе
+                        переезда к
+                        новому
+                        месту жительства, обращайтесь к профессионалам.
+                    </p>
+                    <button class="about_btn button animate__animated">Связаться с нами</button>
+                    <svg class="about-text-lines" width="250" height="182" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <path id="about-text-line" d="M1 1 H 247 V 182" />
+                            <mask id="about-text-line-mask">
+                                <use class="mask" href="#about-text-line" />
+                            </mask>
+                        </defs>
+                        <g class="paths">
+                            <use href="#about-text-line" mask="url(#about-text-line-mask)" />
+                        </g>
+                    </svg>
+
+                    <svg class="about-text-lines--tablet" width="398" height="276" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <path id="about-text-line-tablet" d="M396 1 V 274 H 1" />
+                            <mask id="about-text-line-tablet-mask">
+                                <use class="mask" href="#about-text-line-tablet" />
+                            </mask>
+                        </defs>
+                        <g class="paths">
+                            <use href="#about-text-line-tablet" mask="url(#about-text-line-tablet-mask)" />
+                        </g>
+                    </svg>
+
+
+                </div>
+
+                <svg class="about_lines" width="207" height="302" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <path id="about-line" d="M1 1 H 104 V 300 H 302" />
+                        <mask id="about-line-mask">
+                            <use class="mask" href="#about-line" />
+                        </mask>
+                    </defs>
+                    <g class="paths">
+                        <use href="#about-line" mask="url(#about-line-mask)" />
+                    </g>
+                </svg>
+
+
+
+            </div>
+            <div class="features">
+                <div class="features-text">
+                    <h2 class="features_title title animate__animated hidden animate__delay-2s">Грузоперевозки по
+                        всей
+                        России</h2>
+                    <p class="features_descr animate__animated hidden animate__delay-3s">Эффективное решение
+                        непростых
+                        задач, связанных с
+                        транспортировкой грузов любой
+                        сложности, услугами грузчиков или переездом по столице, области и стране.</p>
+
+                    <svg class="features-text_lines--top features-text_lines" width="381" height="90"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <path id="features-text-line-top-first" d="M1 1 V 90 H 2" />
+                            <path id="features-text-line-top-second" d="M380 1 H 1 V 2" />
+                            <mask id="features-text-line-top-first-mask">
+                                <use class="mask" href="#features-text-line-top-first" />
+                            </mask>
+                            <mask id="features-text-line-top-second-mask">
+                                <use class="mask" href="#features-text-line-top-second" />
+                            </mask>
+                        </defs>
+                        <g class="paths">
+                            <use href="#features-text-line-top-first" mask="url(#features-text-line-top-first-mask)" />
+                            <use href="#features-text-line-top-second"
+                                mask="url(#features-text-line-top-second-mask)" />
+                        </g>
+                    </svg>
+
+                    <svg class="features-text_lines--bottom features-text_lines" width="2" height="290"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <path id="features-text-line-bottom" d="M1 1 V 288 H 2" />
+                            <mask id="features-text-line-bottom-mask">
+                                <use class="mask" href="#features-text-line-bottom" />
+                            </mask>
+                        </defs>
+                        <g class="paths">
+                            <use href="#features-text-line-bottom" mask="url(#features-text-line-bottom-mask)" />
+                        </g>
+                    </svg>
+
+                    <svg class="features-text_lines--tablet" width="2" height="182" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <path id="features-text-line-tablet" d="M1 1 V 182 H 3" />
+                            <mask id="features-text-line-tablet-mask">
+                                <use class="mask" href="#features-text-line-tablet" />
+                            </mask>
+                        </defs>
+                        <g class="paths">
+                            <use href="#features-text-line-tablet" mask="url(#features-text-line-tablet-mask)" />
+                        </g>
+                    </svg>
+
+
+                </div>
+                <div class="features-items">
+                    <div class="features-item animate__animated animate__delay-4s">
+                        <img src="img/features_item_01.png" alt="box" class="features-item_img">
+                        <p class="features-item_descr">Аккуратно и бережно упакованные нами вещи будут доставлены
+                            вовремя
+                        </p>
+                    </div>
+                    <div class="features-item animate__animated animate__delay-1s">
+                        <img src="img/features_item_02.png" alt="truck" class="features-item_img">
+                        <p class="features-item_descr">Профессиональные и опытные водители не нарушают дорожного
+                            этикета
+                            и ПДД</p>
+                    </div>
+                    <div class="features-item animate__animated animate__delay-3s">
+                        <img src="img/features_item_03.png" alt="code" class="features-item_img">
+                        <p class="features-item_descr">Наши цены – честные, прозрачные и фиксированные</p>
+                    </div>
+                    <div class="features-item animate__animated animate__delay-2s">
+                        <img src="img/features_item_04.png" alt="location" class="features-item_img">
+                        <p class="features-item_descr">Через 20 минут автотранспорт уже будет у вас!</p>
+                    </div>
+                    <svg class="features-items_lines" width="320" height="87" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <path id="features-item-first" d="M1 1 V 50 H 2" />
+                            <path id="features-item-second" d="M50 85 H 288 V 289" />
+                            <path id="features-item-third" d="M318 1 V 49 H 316" />
+                            <mask id="features-item-first-mask">
+                                <use class="mask" href="#features-item-first" />
+                            </mask>
+                            <mask id="features-item-second-mask">
+                                <use class="mask" href="#features-item-second" />
+                            </mask>
+                            <mask id="features-item-third-mask">
+                                <use class="mask" href="#features-item-third" />
+                            </mask>
+                        </defs>
+                        <g class="paths">
+                            <use href="#features-item-first" mask="url(#features-item-first-mask)" />
+                            <use href="#features-item-second" mask="url(#features-item-second-mask)" />
+                            <use href="#features-item-third" mask="url(#features-item-third-mask)" />
+                        </g>
+                    </svg>
+
+                    <svg class="features-items_lines--tablet" width="405" height="362"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <path id="features-item-line-tablet-first" d="M1 1 V 70 H 2" />
+                            <path id="features-item-line-tablet-second" d="M40 110 H 368 V 108" />
+                            <path id="features-item-line-tablet-third" d="M403 240 V 288 H 401" />
+                            <path id="features-item-line-tablet-fourth" d="M363 330 H 37 V 329" />
+                            <mask id="features-item-line-tablet-first-mask">
+                                <use class="mask" href="#features-item-line-tablet-first" />
+                            </mask>
+                            <mask id="features-item-line-tablet-second-mask">
+                                <use class="mask" href="#features-item-line-tablet-second" />
+                            </mask>
+                            <mask id="features-item-line-tablet-third-mask">
+                                <use class="mask" href="#features-item-line-tablet-third" />
+                            </mask>
+                            <mask id="features-item-line-tablet-fourth-mask">
+                                <use class="mask" href="#features-item-line-tablet-fourth" />
+                            </mask>
+                        </defs>
+                        <g class="paths">
+                            <use href="#features-item-line-tablet-first"
+                                mask="url(#features-item-line-tablet-first-mask)" />
+                            <use href="#features-item-line-tablet-second"
+                                mask="url(#features-item-line-tablet-second-mask)" />
+                            <use href="#features-item-line-tablet-third"
+                                mask="url(#features-item-line-tablet-third-mask)" />
+                            <use href="#features-item-line-tablet-fourth"
+                                mask="url(#features-item-line-tablet-fourth-mask)" />
+                        </g>
+                    </svg>
+
+                </div>
+
+                <svg class="features_lines" width="2" height="150" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <path id="features-lines" d="M1 1 V 182 H 3" />
+                        <mask id="features-lines-mask">
+                            <use class="mask" href="#features-lines" />
+                        </mask>
+                    </defs>
+                    <g class="paths">
+                        <use href="#features-lines" mask="url(#features-lines-mask)" />
+                    </g>
+                </svg>
+
+            </div>
+        </div>
+    </section>
+    <div class="main">
+        <div class="container">
+            <div class="services" id="services">
+                <div class="services_title title hidden animate__animated animate__delay-2s">Наши услуги</div>
+                <div class="services-items">
+
+                    <svg class="services-items_lines" width="200" height="71" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <path id="services-items-line" d="M1 1 V 69 H 200" />
+                            <mask id="services-items-line-mask">
+                                <use class="mask" href="#services-items-line" />
+                            </mask>
+                        </defs>
+                        <g class="paths">
+                            <use href="#services-items-line" mask="url(#services-items-line-mask)" />
+                        </g>
+                    </svg>
+
+                    <svg class="services-items_lines--tablet" width="300" height="463"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <path id="services-items-line-tablet-first" d="M1 1 V 69 H 2" />
+                            <path id="services-items-line-tablet-second" d="M170 220 H 228 V 218" />
+                            <path id="services-items-line-tablet-third" d="M298 380 V 461 H 170" />
+                            <mask id="services-items-line-tablet-first-mask">
+                                <use class="mask" href="#services-items-line-tablet-first" />
+                            </mask>
+                            <mask id="services-items-line-tablet-second-mask">
+                                <use class="mask" href="#services-items-line-tablet-second" />
+                            </mask>
+                            <mask id="services-items-line-tablet-third-mask">
+                                <use class="mask" href="#services-items-line-tablet-third" />
+                            </mask>
+                        </defs>
+                        <g class="paths">
+                            <use href="#services-items-line-tablet-first"
+                                mask="url(#services-items-line-tablet-first-mask)" />
+                            <use href="#services-items-line-tablet-second"
+                                mask="url(#services-items-line-tablet-second-mask)" />
+                            <use href="#services-items-line-tablet-third"
+                                mask="url(#services-items-line-tablet-third-mask)" />
+                        </g>
+                    </svg>
+
+
+                </div>
+                <button class="button services_btn animate__animated animate__delay-3s">
+                    Все услуги
+                    <svg class="services_btn-lines" width="2" height="216" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <path id="services-btn-line" d="M1 1 V 216 H 2" />
+                            <mask id="services-btn-line-mask">
+                                <use class="mask" href="#services-btn-line" />
+                            </mask>
+                        </defs>
+                        <g class="paths">
+                            <use href="#services-btn-line" mask="url(#services-btn-line-mask)" />
+                        </g>
+                    </svg>
+
+                    <svg class="services_btn-lines services_btn-lines--tablet" width="2" height="220"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <path id="services-btn-line-tablet-first" d="M1 1 V 95 H 2" />
+                            <path id="services-btn-line-tablet-second" d="M1 140 V 218 H 2" />
+                            <mask id="services-btn-line-tablet-first-mask">
+                                <use class="mask" href="#services-btn-line-tablet-first" />
+                            </mask>
+                            <mask id="services-btn-line-tablet-second-mask">
+                                <use class="mask" href="#services-btn-line-tablet-second" />
+                            </mask>
+                        </defs>
+                        <g class="paths">
+                            <use href="#services-btn-line-tablet-first"
+                                mask="url(#services-btn-line-tablet-first-mask)" />
+                            <use href="#services-btn-line-tablet-second"
+                                mask="url(#services-btn-line-tablet-second-mask)" />
+                        </g>
+                    </svg>
+
+                </button>
+            </div>
+            <div class="comments">
+                <h2 class="comments_title title hidden animate__animated animate__delay-1s">О нас говорят <span
+                        class="comments_subtitle hidden animate__animated animate__delay-2s">Все
+                        отзывы</span></h2>
+                <div class="comments-slider">
+
+                    <div class="comments-slide">
+                        <div class="comments-slide-wrap hidden animate__animated animate__delay-1s">
+                            <img src="img/dima.jpg" alt="man"
+                                class="comments-slide_img hidden animate__animated animate__delay-1s">
+                            <p class="comments-slide_text">
+                                Работаю с вами уже второй год никогда не было нареканий, водители опытные, иногда
+                                конечно
+                                бывают опоздания, но что же поделать если наш город порой окутан пробками от начала
+                                и до
+                                конца,
+                                я считаю что
+                                вины компании или водителей в этом нет, главное чтобы отзвонились что опаздают!
+                                Одним
+                                словом
+                                сам
+                                работаю с
+                                фирмой и всем советую!!! Еще раз огромное спасибо!!!
+                            </p>
+                            <span class="comments-slide_author">Дмитрий</span>
+                        </div>
+                    </div>
+
+                    <div class="comments-slide">
+                        <div class="comments-slide-wrap">
+                            <img src="img/svetlana.jpg" alt="man" class="comments-slide_img">
+                            <p class="comments-slide_text">
+                                Спасибо большое вашей компании и ребятам, которые помогли нам с переездом на дачу!
+                                Вменяемая
+                                цена, грузчики сработали быстро, и что важно - очень аккуратно. Все привезли и даже
+                                расставили по местам в доме! Затащили ванну на 2 этаж (за что я очень беспокоилась).
+                                Хотелось бы еще отметить работу диспетчера - все очень подробно и вежливо и
+                                доброжелательно
+                                все объяснила и рассказала. Всем спасибо!
+                            </p>
+                            <span class="comments-slide_author">Светлана Федорова</span>
+                        </div>
+                    </div>
+                </div>
+
+                <svg class="comments_lines" width="2" height="80" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <path id="comments-line" d="M1 1 V 80 H 2" />
+                        <mask id="comments-line-mask">
+                            <use class="mask" href="#comments-line" />
+                        </mask>
+                    </defs>
+                    <g class="paths">
+                        <use href="#comments-line" mask="url(#comments-line-mask)" />
+                    </g>
+                </svg>
+
+
+            </div>
+            <div class="contacts" id="contacts">
+                <h2 class="contacts_title title hidden animate__animated animate__delay-1s">Заказать грузоперевоку
+                </h2>
+                <div class="contacts-form">
+                    <div class="contacts-form-wrapper">
+                        <div class="inputs-wrap">
+                            <div class="input-wrap hidden animate__animated animate__delay-1s">
+                                <input type="text" id="name" class="input-name contacts-form_input" required>
+                                <label class="contacts-form_label" for="name">Ваше имя</label>
+                            </div>
+                            <div class="input-wrap hidden animate__animated animate__delay-2s">
+                                <input type="text" id="mobile" class="input-mobile contacts-form_input" required>
+                                <label class="contacts-form_label" for="mobile">Номер телефона</label>
+                            </div>
+                            <div class="input-wrap hidden animate__animated animate__delay-3s">
+                                <input type="text" id="mail" class="input-mail contacts-form_input" required>
+                                <label class="contacts-form_label" for="mail">Электронная почта</label>
+                            </div>
+                        </div>
+                        <div class="textarea-wrap hidden animate__animated animate__delay-2s">
+                            <textarea class="contacts-form_textarea" id="info" required></textarea>
+                            <label class="contacts-form_label contacts-form_label--textarea" for="info">Дополнительная
+                                информация</label>
+                        </div>
+                    </div>
+                    <button class="button contacts-form_btn animate__animated">Перезвоните мне</button>
+                </div>
+                <svg class="contacts_lines" width="515" height="592" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <path id="contacts-line-first" d="M1 1 V 590 H 515" />
+                        <path id="contacts-line-second" d="M590 1 H 1 V 2" />
+                        <mask id="contacts-line-first-mask">
+                            <use class="mask" href="#contacts-line-first" />
+                        </mask>
+                        <mask id="contacts-line-second-mask">
+                            <use class="mask" href="#contacts-line-second" />
+                        </mask>
+                    </defs>
+                    <g class="paths">
+                        <use href="#contacts-line-first" mask="url(#contacts-line-first-mask)" />
+                        <use href="#contacts-line-second" mask="url(#contacts-line-second-mask)" />
+                    </g>
+                </svg>
+
+                <svg class="contacts_lines contacts_lines--tablet" width="310" height="657"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <path id="contacts-line-tablet" d="M296 8 V 80 H 70 V 655 h 308" />
+                        <mask id="contacts-line-tablet-mask">
+                            <use class="mask" href="#contacts-line-tablet" />
+                        </mask>
+                    </defs>
+                    <g class="paths">
+                        <use href="#contacts-line-tablet" mask="url(#contacts-line-tablet-mask)" />
+                    </g>
+                </svg>
+
+
+            </div>
+        </div>
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-wrap">
+                    <div class="footer-wrap_item">
+                        <img src="img/address_icon.png" alt="point" class="footer-wrap_item-icon">
+                        г. Москва ул. Покровская 11
+                    </div>
+                    <div class="footer-wrap_item">
+                        <img src="img/phone_icon.png" alt="point" class="footer-wrap_item-icon">
+                        8 (499) 585-99-96
+                    </div>
+                    <div class="footer-wrap_item">
+                        <img src="img/mail_icon.png" alt="point" class="footer-wrap_item-icon">
+                        gruzovdel@gmail.com
+                    </div>
+                    <div class="footer-wrap_item">
+                        © 2001-2020
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+
+
+</body>
+
+</html>
+</div>

@@ -1,0 +1,25 @@
+.paths {
+    fill: none;
+    stroke: #fff;
+    stroke-dasharray: 8 2;
+}
+
+.mask {
+    fill: none;
+    stroke: white;
+    stroke-width: 10;
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    /* animation: dash 5s linear forwards; */
+
+}
+
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+:root {
+    --animate-delay: 0.5s;
+}

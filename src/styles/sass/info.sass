@@ -1,0 +1,216 @@
+@import vars
+.info
+    position: relative
+    &::before
+        content: ""
+        background: url('/img/bg_1_min.png') no-repeat
+        // background-position: 100% 100%
+        // background-size: cover
+        background-position: 50% 8%
+        width: 100%
+        height: 1995px
+        display: block
+        position: absolute
+        top: -200px
+        left: 0
+        right: 0
+        z-index: -2
+
+// about style
+
+.about
+    margin-bottom: 165px
+    height: 700px
+    display: flex
+    justify-content: space-between
+    &_title
+        opacity: 0
+        transition: 3s
+    &_lines
+        display: none
+        position: absolute
+        top: -23%
+        right: 37%
+    &_figure
+        position: relative
+        &-lines
+            &--top
+                position: absolute
+                top: -29%
+                right: -43%
+            &--bottom
+                position: absolute
+                bottom: 4%
+                right: -41%
+    &_img
+        padding: 12px
+        border: 1px solid $colorWhite
+    &-text
+        position: relative
+        align-self: flex-end
+        &-lines
+            position: absolute
+            bottom: -34%
+            right: 18%
+            &--tablet
+                display: none
+                position: absolute
+                top: 40%
+                right: 9%
+
+    &_descr
+        margin-bottom: 30px
+        max-width: 570px
+        opacity: 0
+        transition: 3s
+
+// features style
+
+.features
+    position: relative
+    display: flex
+    align-items: center
+    justify-content: space-between
+    &-text
+        position: relative
+        flex-basis: 40%
+        &_lines
+            position: absolute
+            &--top
+                top: -38%
+                right: -41%
+            &--bottom
+                bottom: -134%
+                right: 41%
+            &--tablet
+                position: absolute
+                top: -114%
+                left: 20%
+                display: none
+
+    &-items
+        position: relative
+        flex-basis: 45%
+        display: flex
+        flex-wrap: wrap
+        justify-content: space-between
+        &_lines
+            position: absolute
+            top: 39%
+            left: 19%
+            &--tablet
+                display: none
+                position: absolute
+                top: -18%
+                left: 20%
+    &-item
+        opacity: 0
+        transition: 3s
+        text-align: center
+        flex-basis: 40%
+        margin-bottom: 79px
+        &_img
+            height: 61px
+            margin-bottom: 12px
+        &_descr
+            font-size: 16px
+
+    &_lines
+        display: none
+        position: absolute
+        left: 20%
+        bottom: -13%
+
+#line-2
+    transition: 0.5s
+
+@media (max-width: 768px)
+    .info
+        &::before
+            top: -278px
+    .about
+        margin-top: 283px
+        margin-bottom: 0
+        display: block
+        &_lines
+            display: block
+        &_figure
+            width: 264px
+            position: absolute
+            top: -10%
+            right: 0
+            overflow-x: hidden
+            &-lines
+                &--top, &--bottom
+                    display: none
+        &_descr
+            max-width: none
+            &--first
+                padding-right: 200px
+            &--second
+                max-width: 90%
+        &-text
+            &-lines
+                display: none
+                &--tablet
+                    display: block
+
+    .features
+        flex-direction: column
+        &-text
+            margin-bottom: 87px
+            &_lines
+                display: none
+                &--tablet
+                    display: block
+        &-items
+            &_lines
+                display: none
+                &--tablet
+                    display: block
+        &_lines
+            display: block
+
+@media (max-width: 414px)
+    .info
+        &::before
+            height: 2500px
+            top: -299px
+    .about
+        margin-top: 240px
+        &_lines
+            display: none
+        &_figure
+            display: none
+        &_descr
+            font-size: 15px
+            margin-bottom: 24px
+            &--first
+                padding-right: 0
+            &--second
+                max-width: none
+
+        &-text
+            &-lines
+                &--tablet
+                    display: none
+
+    .features
+        &_descr
+            font-size: 15px
+        &-text
+            margin-bottom: 24px
+            &_lines
+                &--tablet
+                    display: none
+        &-item
+            margin-bottom: 50px
+
+        &-items
+            display: block
+            margin-top: 50px
+            &_lines
+                &--tablet
+                    display: none
+        &_lines
+            display: none

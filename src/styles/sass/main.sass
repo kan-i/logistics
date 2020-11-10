@@ -1,0 +1,380 @@
+@import vars
+.main
+    position: relative
+    &::before
+        content: ""
+        background: url('/img/bg_2_min.jpg') no-repeat
+        // background-position: 100% 100%
+        background-position: 100% -8%
+        background-size: cover
+        width: 100%
+        height: 100%
+        display: block
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        z-index: -3
+.services
+    margin-top: 100px
+    text-align: center
+
+    &-items
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin-bottom: 44px
+        flex-wrap: wrap
+        &_lines
+            position: absolute
+            bottom: -20%
+            left: 24%
+            &--tablet
+                display: none
+                position: absolute
+                left: 20%
+                top: -11%
+                z-index: -1
+    &-item
+        width: 370px
+        height: 370px
+        position: relative
+        padding-left: 34px
+        padding-bottom: 34px
+        text-align: left
+        display: flex
+        align-items: flex-end
+        transition: 0.8s
+        &::before
+            content: ""
+            display: block
+            position: absolute
+            top: 0
+            left: 0
+            width: 100%
+            height: 100%
+            background: $colorDarkBlue
+            opacity: 0.36
+            z-index: -1
+        &:hover.services-item::before
+            opacity: 0.6
+        &_title
+            font-size: 20px
+            font-weight: 700
+        &_price
+            font-size: 15px
+        &_img
+            width: 100%
+            height: 100%
+            position: absolute
+            top: 0
+            left: 0
+            z-index: -2
+        &_btn
+            width: 46px
+            height: 46px
+            position: absolute
+            top: 34px
+            right: 34px
+            border: none
+            background-color: rgba(255, 255, 255, 0.28)
+            background-image: url(/img/arrow-right.png)
+            background-position: center center
+            background-repeat: no-repeat
+            cursor: pointer
+            font-size: 14px
+            color: transparent
+            transition: 0.4s linear
+            &:hover
+                width: 151px
+                background-color: transparent
+                border: 1px solid rgba(255, 255, 255, 0.28)
+                background-image: none
+                color: $colorWhite
+                .btn-icon
+                    opacity: 0
+    &_btn
+        position: relative
+        &-lines,
+            position: absolute
+            top: 113%
+            left: 50%
+            &--tablet
+                display: none
+
+.comments
+    margin-top: 112px
+    margin-bottom: 162px
+    position: relative
+    &_lines
+        position: absolute
+        bottom: -88px
+        left: 50%
+        z-index: -1
+    &-slider
+        position: relative
+
+        margin-top: 195px
+        color: $colorDarkBlue
+    &_title
+        line-height: 30px
+        vertical-align: middle
+
+    &-slide
+        outline: none
+        display: inline-block
+        &-wrap
+            padding: 70px 90px 45px 90px
+            position: relative
+            margin-left: auto
+            margin-right: auto
+            max-width: 770px
+            &::before
+                content: ""
+                display: block
+                width: 100%
+                height: 100%
+                background-color: $colorWhite
+                opacity: 0.8
+                position: absolute
+                top: 0
+                left: 0
+                z-index: -1
+            &::after
+                content: ""
+                display: block
+                width: 100%
+                height: 100%
+                position: absolute
+                top: -8px
+                left: -8px
+                z-index: -1
+                border: 1px solid $colorWhite
+                padding: 8px
+        &_img
+            width: 170px
+            height: 170px
+            position: absolute
+            top: -50%
+            margin-top: 40px
+            left: 50%
+            margin-left: -85px
+            border: 6px solid $colorWhite
+        &_author
+            display: block
+            margin-top: 34px
+            text-align: right
+            font-weight: 700
+    &_subtitle
+        position: relative
+        padding-bottom: 3px
+        margin-left: 69px
+        font-size: 20px
+        font-weight: 400
+        border-bottom: 1px solid $colorWhite
+        cursor: pointer
+        transition: 0.3s linear
+        &:hover
+            color: $colorDarkBlue
+            border-bottom: 1px solid $colorDarkBlue
+
+.contacts
+    position: relative
+    text-align: center
+    &_lines
+        position: absolute
+        top: -14%
+        left: 6%
+        z-index: -1
+        &--tablet
+            display: none
+    &-form
+        max-width: 860px
+        margin-left: auto
+        margin-right: auto
+        margin-top: 86px
+        margin-bottom: 122px
+        &-wrapper
+            display: flex
+            justify-content: space-between
+            margin-bottom: 70px
+        &_input, &_textarea
+            width: 100%
+            padding: 27px 34px
+            display: block
+            font-size: 16px
+            color: $colorDarkBlue
+            outline: none
+            border: none
+            box-shadow: -18px 25px 54px rgba(24, 26, 68, 0.38)
+            &:focus~label,
+            &:valid~label
+                color: $colorWhite
+                top: -15px
+                left: 0
+                font-size: 13px
+        &_textarea
+            height: 100%
+        &_label
+            color: $colorDarkBlue
+            position: absolute
+            top: 50%
+            margin-top: -8px
+            left: 34px
+            font-size: 16px
+            transition: 0.3s linear
+            cursor: text
+            &--textarea
+                top: 34px
+.inputs-wrap
+    flex-basis: 47%
+
+.input-wrap
+    position: relative
+    &:not(:last-child)
+        margin-bottom: 35px
+
+.textarea-wrap
+    position: relative
+    flex-basis: 50%
+
+@media (max-width: 768px)
+
+    .main
+        &::before
+            top: -5%
+            background-position: 50% 100%
+            height: 105%
+
+    .services
+        &_title.title
+            text-align: left
+            margin-bottom: 74px
+        &-items
+            flex-wrap: wrap
+            margin-bottom: 0
+            &_lines
+                bottom: -5%
+                left: 3%
+                &--tablet
+                    display: block
+        &-item
+            width: 300px
+            height: 300px
+            margin-bottom: 44px
+
+        &_btn
+            &-lines
+                display: none
+                &--tablet
+                    display: block
+
+    .comments
+        margin-top: 0
+        &_title
+            margin-top: 100px
+        &_subtitle
+            margin-left: 40px
+        &-slider
+            margin-top: 0
+        &-slide
+            &_img
+                margin-top: 70px
+
+    .contacts
+        padding-top: 60px
+        &-form
+            margin-bottom: 88px
+        &_lines
+            display: none
+            &--tablet
+                display: block
+
+@media ( max-width: 414px )
+    .main
+        &::before
+            height: 117%
+            top: -17%
+            background-position: 55% 100%
+
+    .services
+        margin-top: 75px
+        &-items
+            &_lines
+                display: none
+                &--tablet
+                    display: none
+        &_btn
+            &-lines
+                display: none
+
+        &_title.title
+            margin-bottom: 24px
+        &-item
+            margin-bottom: 24px
+
+    .comments
+        margin-bottom: 120px
+        &_title
+            display: block
+        &_subtitle
+            display: inline-block
+            margin-left: 0
+            margin-top: 24px
+            font-size: 16px
+        &-slide
+            &-wrap
+                padding: 35px 25px 35px
+            &_text
+                font-size: 13px
+                overflow: hidden
+                position: relative
+                max-height: 180px
+                // text-align: justify
+                // padding-right: 1em
+                &::before
+                    content: '…'
+                    position: absolute
+                    right: 0
+                    bottom: 0
+                &::after
+                    content: ""
+                    position: absolute
+                    right: 0
+                    width: 1em
+                    height: 1em
+                    margin-top: 0.2em
+                    background: white
+            &_author
+                font-size: 13px
+                margin-top: 13px
+            &_img
+                width: 104px
+                height: 104px
+                margin-left: -52px
+                margin-top: 55px
+
+        &_lines
+            display: none
+
+    .contacts
+        &-form
+            text-align: left
+            margin-top: 0
+            &-wrapper
+                flex-wrap: wrap
+                margin-bottom: 35px
+        &_lines
+            &--tablet
+                display: none
+
+        &_title.title
+            margin-bottom: 36px
+
+    .inputs-wrap
+        flex-basis: 100%
+        margin-bottom: 35px
+    .textarea-wrap
+        flex-basis: 100%
+        text-align: left
